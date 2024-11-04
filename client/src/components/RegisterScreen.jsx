@@ -13,15 +13,15 @@ const RegisterScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newErrors = {};
-    
-    if (password !== confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+    if (password !== confirmPassword){
+      alert("Passwords do not match");
+    }
     try {
       await apiService.register({ email, password });
       navigate("/"); 
       alert("user Created Successfully");
     } catch (error) {
-      setErrors({ general: error.message });
+      setErrors({ general: error.response?.data?.message  });
     }
   };
 

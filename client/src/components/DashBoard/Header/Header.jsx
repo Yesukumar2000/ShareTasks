@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/images/logo.png';
-import userProfile from '../../../assets/images/image1.jpg'; // assuming you have this image
+import userProfile from '../../../assets/images/image1.jpg'; 
 import '../../../styles/DashBoard/Header.css';
 
 function Header() {

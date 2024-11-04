@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import apiService from "../utils/api";
 import LeftsideBanner from "./LeftsideBanner";
 import '../styles/LoginScreen.css';
 
-const ForgotPasswordContainer = styled.div`
-  // Your forgot password form styles here
-`;
 
 const ForgotPasswordScreen = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +25,6 @@ const ForgotPasswordScreen = () => {
 };
 
   return (
-    <ForgotPasswordContainer>
       <div className="container">
         <LeftsideBanner />
         <div className="login-right">
@@ -52,7 +47,6 @@ const ForgotPasswordScreen = () => {
           </form>
         </div>
       </div>
-    </ForgotPasswordContainer>
   );
 };
 

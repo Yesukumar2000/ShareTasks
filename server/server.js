@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', UserSchema);
 
-// Create Nodemailer transporter
+// Create Here Nodemailer transporter
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -53,11 +53,9 @@ app.post('/api/register', async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ message: "User already exists." });
         }
-
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ email, password: hashedPassword });
         await newUser.save();
-
         res.status(201).json({ message: "User registered successfully." });
     } catch (error) {
         res.status(500).json({ message: "Server error", error });

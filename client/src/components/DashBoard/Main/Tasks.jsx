@@ -37,8 +37,7 @@ const Tasks = () => {
      
       </div>
       <div className="container1">
-
-      <Projects/>
+       <Projects/>
       </div>
       
     </>
